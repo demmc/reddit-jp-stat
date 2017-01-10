@@ -2,7 +2,7 @@
 
 # usage: (cd r/newsokur; ../../plot.sh)
 # そのサブレディットについていくつかグラフを書く。
-sub=$(basename `pwd`)
+sub=$(basename `pwd` | sed 's/_/\\\\_/g')
 cat <<EOF | gnuplot -
     set terminal png;
     set output "scores-comments_dist.png";
@@ -43,9 +43,9 @@ cat <<EOF | gnuplot -
     set xrange ["2015/03":"2016/12"]
     set xlabel "Time";
     set ylabel "Frequency (users)";
-    set xtics "2015/02", 10511999, "2016/12";
+    set xtics "2015/02", 7883999, "2016/12";
     set ytics nomirror;
-    set autoscale;
+    #set autoscale;
     set y2label "Frequency (threads)";
     set y2tics autofreq;
     set y2tics auto;
