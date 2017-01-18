@@ -232,17 +232,3 @@ gnuplot -p -e '
        "data/users_top5_time.data" using 1:5 with lp title "newsokuvip",
        "data/users_top5_time.data" using 1:6 with lp title "bakanewsjp";
 '
-
-# 全サブレについてのユーザー数
-gnuplot -p -e '
-  set terminal png;
-  set output "data/users_all_time.png";
-  set timefmt "%Y/%m";
-  set xdata time;
-  set format x "%Y/%m";
-  set xtics "2015/03", 7884000, "2016/12";
-  set xrange ["2015/03":"2016/12"];
-  set xlabel "Time";
-  set ylabel "Frequency";
-  plot "data/users_all_time.data" using 1:2 with lp title "all jp subreddits"; 
-'

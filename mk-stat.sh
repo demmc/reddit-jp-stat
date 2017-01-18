@@ -69,12 +69,3 @@ for sub in lowlevelaware newsokuvip bakanewsjp; do
     join $tmp <(cat r/$sub/$target.data | cut -d' ' -f1,5) | sponge $tmp
 done
 mv $tmp data/users_top5_time.data
-
-
-# 全サブレディットの月ごとのユーザ数の集計
-cat r/*/submissions.tsv | gawk -vFS='\t' '{date=strftime("%Y/%m", $2); print date, $5}' |
-    sort |
-    uniq |
-    cut -d' ' -f1 |
-    uniq -c |
-    gawk '{print $2, $1}' >data/users_all_time.data
