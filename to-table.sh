@@ -33,7 +33,7 @@
 
     echo '### 2016/12 全サブレのポイント'
     echo
-    echo 'userでソート済'
+    echo 'userとscoreでソート済'
     echo
     
     sed <$data 's|^|/r/|g' |
