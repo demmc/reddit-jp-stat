@@ -8,7 +8,9 @@
 ```sh
 	# `subreddits.txt`に書かれたサブレディットを取得する。
 	# 時間がかかるため注意。
-	./get-all.sh -a -b -s  # -> /r/*/submissions.{json,tsv}
+	./get-all.sh -a -b -s          # -> /r/*/submissions.{json,tsv}
+	# 各サブレディットについて集計
+	./apply-all.sh mk-data.sh      # -> /r/*/*.data
 	# データを集計する
 	./mk-stat.sh                   # -> /data/*.data
 	# グラフを書く。
