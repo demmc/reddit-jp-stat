@@ -2,6 +2,11 @@
 
 日本語園のRedditについてグラフを書く。
 
+## 必要なコマンド
+
+* [subm](https://github.com/demmc/subm)
+* gawk
+* gnuplot
 
 ## 使い方
 
