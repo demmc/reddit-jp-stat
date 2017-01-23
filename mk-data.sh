@@ -38,7 +38,15 @@ function norm-days(){
         ratio = 30.0 / 31.0
       }
       printf "%s", d
-      for(i=2; i<=NF; i++) printf " %d", int($i*ratio)
+      for(i=2; i<=NF; i++){
+        n = $i * ratio
+        if(n >= int(n)+0.5){
+          n = int(n) + 1
+        }else{
+          n = int(n)
+        }
+        printf " %d", n
+      }
       print ""
     }' -
 }
