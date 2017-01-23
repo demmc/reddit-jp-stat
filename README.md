@@ -4,6 +4,7 @@
 
 日本語圏のRedditについてグラフを書く。
 
+
 ## 必要なコマンド
 
 * [subm](https://github.com/demmc/subm)
