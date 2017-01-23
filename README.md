@@ -13,30 +13,14 @@
 ```sh
 	# `subreddits.txt`に書かれたサブレディットを取得する。
 	# 時間がかかるため注意。
-	./get-all.sh -a -b -s          # -> /r/*/submissions.{json,tsv}
-	# 各サブレディットについて集計
-	./apply-all.sh mk-data.sh      # -> /r/*/*.data
-	# データを集計する
-	./mk-stat.sh                   # -> /data/*.data
+	make fetch               -> r/*/*.{tsv,json}
+	# 集計
+	make data                -> r/*/*.data data/*.data
 	# グラフを書く。
-	./plot-stat.sh                 # -> /data/*.png
-```
+	make plot                -> r/*/*.png data/*.png
 
-おまけ
-
-```sh
-	# スコアの分布とかを集計する。
-	( cd r/newsokur; mk-data.sh )   # -> /r/newsokur/*.data
-	# そのグラフを書く。
-	( cd r/newsokur; ./plot.sh )    # -> /r/newsokur/*.png
-	# すべてのサブレディットについて書く場合はこちら。
-	./apply-all.sh mk-data.sh       # -> /r/*/*.data
-	./apply-all.sh plot.sh          # -> /r/*/*.png
-```
-
-```sh
-	# `/data/`以下の.dataファイルMarkdownで表にする。
-	./to-table.sh  # -> /data/table.md
+	# これらすべてを行う
+	make
 ```
 
 ## 集計結果
